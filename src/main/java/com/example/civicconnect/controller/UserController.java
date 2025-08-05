@@ -11,7 +11,7 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @PostMapping("/registers")
+    @PostMapping("/register")
     public User registerUser(@RequestBody User user) {
         return userRepository.save(user);
     }

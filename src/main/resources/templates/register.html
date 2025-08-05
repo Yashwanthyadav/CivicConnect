@@ -1,36 +1,52 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Register User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CivicConnect - Register</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<h1>Register New User</h1>
 
-<form action="/register" method="post">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required><br><br>
+    <nav>
+        <div class="logo">CivicConnect</div>
+        <ul>
+            <li><a href="index">Home</a></li>
+            <li><a href="add-issue">Report Issue</a></li>
+            <li><a href="login">Login</a></li>
+            <li><a href="register">Register</a></li>
+        </ul>
+    </nav>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br><br>
-
-    
-    <label for="number" class="form-label">Mobile Number</label>
-    <input type="text" class="form-control" id="number" name="number" required>
-        
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required><br><br>
-
-    <label for="role">Role:</label>
-    <select id="role" name="role" required>
-        <option value="CITIZEN">Citizen</option>
-        <option value="ADMIN">Admin</option>
-        <option value="SUPERVISOR">Supervisor</option>
-        <option value="OFFICER">Officer</option>
-    </select><br><br>
-
-    <button type="submit">Register</button>
-</form>
+    <div class="container">
+        <h2>Create Account</h2>
+        <form action="/register" method="POST"> <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmpassword">Confirm Password</label>
+                <input type="password" id="confirmpassword" name="confirmpassword" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="contact">Contact Number</label>
+                <input type="number" id="contact" name="contact" required>
+            </div>
+            <button type="submit" class="btn">Register</button>
+        </form>
+        <p class="form-link">
+            Already have an account? <a href="login">Login here</a>
+        </p>
+    </div>
 
 </body>
 </html>
